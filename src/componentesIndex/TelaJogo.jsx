@@ -1,9 +1,9 @@
 import data from "../data"
 import { useState } from "react"
-import ImagemPequena from './../assets/logo-pequeno.png'
+import TopoJogo from "./TopoJogo"
+import Iteracao from "./Iteracao"
 
 const TelaJogo = ()=>{
-    const repeticoes = [0, 1, 2, 3]
     const randint = (min, max) =>{
         return(Math.floor(Math.random()*(max+1-min)+min))
     }
@@ -14,18 +14,10 @@ const TelaJogo = ()=>{
 
     console.log(deck)
     return(
-        <div className="tela-jogo">
-            <div className='topo-jogo'>
-                <img src={ImagemPequena} alt="logo do zap" />
-            </div>
-            {repeticoes.map((key)=>{
-                return(
-                    <div className="pergunta">
-                        <p>Pergunta {key}</p>
-                        <ion-icon name="play-outline"></ion-icon>
-                    </div>
-                )
-            })}         
+        <div className="tela-jogo">            
+            <TopoJogo />
+            <Iteracao />
+       
         </div>
     )
 }

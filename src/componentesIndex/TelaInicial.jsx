@@ -3,7 +3,7 @@ import {useState} from 'react'
 
 
 const TelaInicial = () =>{
-    const [telaAtiva, setTelaAtiva] = useState(false)
+    const [telaAtiva, setTelaAtiva] = useState(true)
 
     if (telaAtiva){
         return(

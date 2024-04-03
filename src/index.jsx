@@ -7,7 +7,7 @@ import './estilos/index.css'
 const App = ()=>{
     return(
     <>
-        <TelaInicial />
+        {/* <TelaInicial /> */}
         <TelaJogo />
     </>
     )
