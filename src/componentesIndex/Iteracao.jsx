@@ -8,7 +8,7 @@ const Iteracao = () => {
                     <div key={key} className="pergunta">
                         <p>Pergunta {key}</p>
                         <ion-icon name="play-outline"></ion-icon>
-                    </div>
+                    </div>    
                 )
             })}
         </>
