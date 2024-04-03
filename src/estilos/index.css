@@ -64,4 +64,30 @@ html, body{
 
 .pergunta{
     display: flex;
+    width: 300px;
+    height: 65px;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    box-shadow: 0px 1px 25px rgba(0, 0, 0, 0.253);
+    cursor: pointer;
+}
+
+
+.pergunta p{
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'Recursive';
+    margin-left: 15px;
+
+}
+
+
+.tela-jogo ion-icon{
+    /* color: white; */
+    font-size: 23px;
+    width: 23px;
+    margin-right: 20px;
 }
