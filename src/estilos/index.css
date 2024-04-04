@@ -10,17 +10,21 @@ html, body{
 .root{
     position: relative;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
     background-color:var(--cor-de-fundo);
     width: 100%;
-    height: 100%;
+    min-height: 100%;
+    overflow-y: auto;
     
 }
 
 .tela-inicial{
-    position: absolute;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
 }
 
 
@@ -65,7 +69,7 @@ html, body{
     margin-top: 30px;
 }
 
-.pergunta{
+.topico-pergunta{
     display: flex;
     width: 300px;
     height: 65px;
@@ -79,7 +83,8 @@ html, body{
 }
 
 
-.pergunta p{
+.topico-pergunta p{
+    
     font-size: 16px;
     font-weight: 700;
     font-family: 'Recursive';
@@ -88,10 +93,11 @@ html, body{
 }
 
 .tela-jogo{
+    margin-top: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
 }
 
 .tela-jogo ion-icon{
@@ -118,3 +124,70 @@ html, body{
     height: 60px;
 }
 
+
+.pergunta{
+    position: relative;
+    width: 299px;
+    height: 131px;
+    background-color: #FFFFD4;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 25px rgba(0, 0, 0, 0.486);
+}
+
+
+.pergunta p{
+    position: absolute;
+    top: 18px;
+    left: 15px;
+    font-size: 18px;
+    font-family: 'recursive';
+    font-weight: 400;
+
+}
+
+
+.pergunta img{
+    position: absolute;
+    bottom: 5px;
+    right: 6px;
+    width: 30px;
+    height: 20px;
+}
+
+
+
+.botoes {
+    position: absolute;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    bottom: 6px;
+}
+
+.botao-resposta{
+    width: 85.17px;
+    height: 37.17px;
+    font-family: 'recursive';
+    color: white;
+    size: 12px;
+    font-weight: 400;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+.nao-lembrei{
+    background-color: #FF3030;
+}
+
+.quase-nao-lembrei{
+    background-color: #FF922E;
+}
+
+.zap{
+    background-color: #2FBE34;
+}

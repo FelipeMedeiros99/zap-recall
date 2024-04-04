@@ -1,4 +1,4 @@
-import ImagemPequena from './../assets/logo-pequeno.png'
+import ImagemPequena from './../../assets/logo-pequeno.png'
 
 const TopoJogo = () => {
     return (

@@ -1,23 +1,13 @@
 import data from "../data"
-import { useState } from "react"
-import TopoJogo from "./TopoJogo"
-import Iteracao from "./Iteracao"
+import { useState, useEffect } from "react"
+import TopoJogo from "./componentesTelaJogo/TopoJogo"
+import Iteracao from "./componentesTelaJogo/Iteracao"
 
-const TelaJogo = ()=>{
-    const randint = (min, max) =>{
-        return(Math.floor(Math.random()*(max+1-min)+min))
-    }
-
-    const chave = Object.keys(data[0])[0]
-    const [deck, setDeck] = useState([...data[0][chave]])
-
-
-    console.log(deck)
+const TelaJogo = ({questoes})=>{        
     return(
-        <div className="tela-jogo">            
+        <div className="tela-jogo">  
             <TopoJogo />
-            <Iteracao />
-       
+            <Iteracao questoes={questoes}/>
         </div>
     )
 }
