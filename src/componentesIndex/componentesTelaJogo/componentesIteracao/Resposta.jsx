@@ -1,4 +1,4 @@
-const Resposta = ({questao, mostrarPergunta, contador, mostrarResposta, alteraClassName, desativarOnclick }) => {
+const Resposta = ({questao, mostrarPergunta, contador, mostrarResposta, alteraClassName, desativarOnclick, adicionaResposta }) => {
     
 
     const fecharPergunta = (nomeClasse) =>{
@@ -6,6 +6,7 @@ const Resposta = ({questao, mostrarPergunta, contador, mostrarResposta, alteraCl
         mostrarResposta(contador, true)
         alteraClassName(contador, `topico-pergunta ${nomeClasse}`)
         desativarOnclick(contador)
+        adicionaResposta(nomeClasse)
     }
 
 

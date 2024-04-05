@@ -4,14 +4,13 @@ import CaixaPergunta from './componentesIteracao/CaixaPergunta'
 import Resposta from './componentesIteracao/Resposta'
 
 
-const Iteracao = ({questoes, contadorDeRespostas}) => {
+const Iteracao = ({questoes, contadorDeRespostas, adicionaResposta }) => {
     
     const [caixaPerguntaOculta, setCaixaPerguntaOculta] = useState([true, true, true, true])
     const mostrarPergunta = (posicao, visivel) => {
         const elementos = [...caixaPerguntaOculta]
         elementos[posicao] = visivel
-        setCaixaPerguntaOculta(elementos)    
-        console.log('caixa de perguntas ocultas: ' + caixaPerguntaOculta)
+        setCaixaPerguntaOculta(elementos)
     }
 
     const [respostaOculta, setRespostaOculta] = useState([true, true, true, true])
@@ -50,7 +49,7 @@ const Iteracao = ({questoes, contadorDeRespostas}) => {
 
                         {!caixaPerguntaOculta[contador] && respostaOculta[contador] && <CaixaPergunta questao={questao} indice={contador} mostrarResposta={mostrarResposta}/>}
                         
-                        {!respostaOculta[contador] && <Resposta contador={contador} mostrarResposta={mostrarResposta} mostrarPergunta={mostrarPergunta} questao={questao} alteraClassName={alteraClassName} desativarOnclick={desativarOnclick}/>}
+                        {!respostaOculta[contador] && <Resposta contador={contador} mostrarResposta={mostrarResposta} mostrarPergunta={mostrarPergunta} questao={questao} alteraClassName={alteraClassName} desativarOnclick={desativarOnclick} adicionaResposta={adicionaResposta}/>}
             
                     </>
                 )

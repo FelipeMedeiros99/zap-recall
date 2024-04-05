@@ -1,5 +1,4 @@
 import Logo from "./../assets/logo.png"
-import {useState} from 'react'
 
 
 const TelaInicial = ({iniciarJogo}) =>{

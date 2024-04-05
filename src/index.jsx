@@ -9,7 +9,7 @@ import data from './data'
 const App = ()=>{
     const [telaInicialAtiva, setTelaInicialAtiva] = useState(true)
     const chave = Object.keys(data[0])[0]
-    const [deck, setDeck] = useState(data[0][chave])
+    const deck = data[0][chave]
 
     const [questoesSelecionadas, setQuestoesSelecionadas] = useState([])
 

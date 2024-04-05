@@ -225,3 +225,22 @@ html, body{
     height: 70px;
 
 }
+
+.imagens-respostas ion-icon{
+    width: 23px;
+    height: 23px;
+    color: #ffffff;
+    border-radius: 100px;
+}
+
+.imagens-respostas .quase-nao-lembrou{
+    background-color: #FF922E;
+}
+
+.imagens-respostas .zapiou{
+    background-color: #2FBE34;
+}
+
+.imagens-respostas .nao-lembrou{
+    background-color: #FF3030;
+}
