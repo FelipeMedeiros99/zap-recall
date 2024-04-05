@@ -15,7 +15,6 @@ html, body{
     background-color:var(--cor-de-fundo);
     width: 100%;
     min-height: 100%;
-    overflow-y: auto;
     
 }
 
@@ -125,25 +124,26 @@ html, body{
 }
 
 
-.pergunta{
+.pergunta, .resposta{
+    padding: 18px 15px 45px 15px;
     position: relative;
     width: 299px;
-    height: 131px;
+    min-height: 131px;
     background-color: #FFFFD4;
     margin-bottom: 25px;
     border-radius: 5px;
     box-shadow: 0 2px 25px rgba(0, 0, 0, 0.486);
+    text-wrap: wrap;
 }
 
 
-.pergunta p{
-    position: absolute;
+.pergunta p, .resposta p{
+    /* position: absolute; */
     top: 18px;
     left: 15px;
     font-size: 18px;
     font-family: 'recursive';
     font-weight: 400;
-
 }
 
 
@@ -159,9 +159,7 @@ html, body{
 
 .botoes {
     position: absolute;
-    width: 100%;
-    padding-left: 15px;
-    padding-right: 15px;
+    width: 271px;
     display: flex;
     justify-content: space-between;
     bottom: 6px;
@@ -180,14 +178,33 @@ html, body{
 
 }
 
+
 .nao-lembrei{
     background-color: #FF3030;
 }
+
 
 .quase-nao-lembrei{
     background-color: #FF922E;
 }
 
+
 .zap{
     background-color: #2FBE34;
+}
+
+
+.nao-lembrou p{
+    color: #FF3030;
+    text-decoration: line-through;
+}
+
+.quase-nao-lembrou p{
+    color: #FF922E;
+    text-decoration: line-through;
+}
+
+.zapiou p{
+    color: #2FBE34;
+    text-decoration: line-through;
 }

@@ -1,6 +1,6 @@
-const TopicoPergunta = ({ indice, mostrarPergunta }) => {
+const TopicoPergunta = ({ indice, mostrarPergunta, classNameTopicoPergunta, onclickAtivo }) => {
     return (
-        <div className="topico-pergunta" onClick={()=>mostrarPergunta(indice)}>
+        <div className={classNameTopicoPergunta} onClick={()=>onclickAtivo? mostrarPergunta(indice, false): null}>
             <p>Pergunta {indice+1}</p>
             <ion-icon name="play-outline"></ion-icon>
         </div>

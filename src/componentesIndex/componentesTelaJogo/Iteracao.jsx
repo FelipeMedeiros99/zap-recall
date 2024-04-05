@@ -1,26 +1,42 @@
 import { useState } from 'react'
 import TopicoPergunta from './componentesIteracao/TopicoPergunta'
 import CaixaPergunta from './componentesIteracao/CaixaPergunta'
-import Pergunta from './componentesIteracao/Pergunta'
+import Resposta from './componentesIteracao/Resposta'
 
 
 const Iteracao = ({questoes}) => {
     
     const [caixaPerguntaOculta, setCaixaPerguntaOculta] = useState([true, true, true, true])
-    const mostrarPergunta = (posicao) => {
+    const mostrarPergunta = (posicao, visivel) => {
         const elementos = [...caixaPerguntaOculta]
-        elementos[posicao] = false
+        elementos[posicao] = visivel
         setCaixaPerguntaOculta(elementos)    
         console.log('caixa de perguntas ocultas: ' + caixaPerguntaOculta)
     }
 
     const [respostaOculta, setRespostaOculta] = useState([true, true, true, true])
-    const mostrarResposta = (posicao)=>{
+    const mostrarResposta = (posicao, visibilidade)=>{
         let visibilidadeRespostas = [...respostaOculta]
-        visibilidadeRespostas[posicao] = false
+        visibilidadeRespostas[posicao] = visibilidade
         setRespostaOculta([...visibilidadeRespostas])
         console.log(respostaOculta)
     }
+
+    const [onclickAtivo, setOnclickAtivo] = useState([true, true, true, true])
+    const desativarOnclick = (pos)=>{
+        let elemento = [...onclickAtivo]
+        elemento[pos] = false
+        setOnclickAtivo(elemento)
+    }
+
+    const [classNameTopicoPergunta, SetClassNameTopicoPergunta] = useState(['topico-pergunta', 'topico-pergunta','topico-pergunta','topico-pergunta'])
+    const alteraClassName=(posicao, novaClasse) =>{
+        let elemento = [...classNameTopicoPergunta]
+        elemento[posicao] = novaClasse
+        SetClassNameTopicoPergunta(elemento)
+    }
+
+
 
 
     return (
@@ -29,11 +45,11 @@ const Iteracao = ({questoes}) => {
 
                 return (
                     <>
-                        {caixaPerguntaOculta[contador] && <TopicoPergunta mostrarPergunta={mostrarPergunta} indice={contador} />}
+                        {caixaPerguntaOculta[contador] && <TopicoPergunta onclickAtivo={onclickAtivo[contador]} classNameTopicoPergunta={classNameTopicoPergunta[contador]} mostrarPergunta={mostrarPergunta} indice={contador} />}
 
                         {!caixaPerguntaOculta[contador] && respostaOculta[contador] && <CaixaPergunta questao={questao} indice={contador} mostrarResposta={mostrarResposta}/>}
                         
-                        {!respostaOculta[contador] && <Pergunta questao={questao}/>}
+                        {!respostaOculta[contador] && <Resposta contador={contador} mostrarResposta={mostrarResposta} mostrarPergunta={mostrarPergunta} questao={questao} alteraClassName={alteraClassName} desativarOnclick={desativarOnclick}/>}
             
                     </>
                 )
