@@ -4,7 +4,7 @@ import CaixaPergunta from './componentesIteracao/CaixaPergunta'
 import Resposta from './componentesIteracao/Resposta'
 
 
-const Iteracao = ({questoes}) => {
+const Iteracao = ({questoes, contadorDeRespostas}) => {
     
     const [caixaPerguntaOculta, setCaixaPerguntaOculta] = useState([true, true, true, true])
     const mostrarPergunta = (posicao, visivel) => {
@@ -27,6 +27,7 @@ const Iteracao = ({questoes}) => {
         let elemento = [...onclickAtivo]
         elemento[pos] = false
         setOnclickAtivo(elemento)
+        contadorDeRespostas()
     }
 
     const [classNameTopicoPergunta, SetClassNameTopicoPergunta] = useState(['topico-pergunta', 'topico-pergunta','topico-pergunta','topico-pergunta'])
