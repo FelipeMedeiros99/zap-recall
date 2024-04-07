@@ -18,7 +18,6 @@ const Iteracao = ({questoes, contadorDeRespostas, adicionaResposta }) => {
         let visibilidadeRespostas = [...respostaOculta]
         visibilidadeRespostas[posicao] = visibilidade
         setRespostaOculta([...visibilidadeRespostas])
-        console.log(respostaOculta)
     }
 
     const [onclickAtivo, setOnclickAtivo] = useState([true, true, true, true])
@@ -44,14 +43,14 @@ const Iteracao = ({questoes, contadorDeRespostas, adicionaResposta }) => {
             {questoes.map((questao, contador) => {
 
                 return (
-                    <>
+                    <div key={contador}>
                         {caixaPerguntaOculta[contador] && <TopicoPergunta onclickAtivo={onclickAtivo[contador]} classNameTopicoPergunta={classNameTopicoPergunta[contador]} mostrarPergunta={mostrarPergunta} indice={contador} />}
 
                         {!caixaPerguntaOculta[contador] && respostaOculta[contador] && <CaixaPergunta questao={questao} indice={contador} mostrarResposta={mostrarResposta}/>}
                         
                         {!respostaOculta[contador] && <Resposta contador={contador} mostrarResposta={mostrarResposta} mostrarPergunta={mostrarPergunta} questao={questao} alteraClassName={alteraClassName} desativarOnclick={desativarOnclick} adicionaResposta={adicionaResposta}/>}
             
-                    </>
+                    </div>
                 )
 
             })}
